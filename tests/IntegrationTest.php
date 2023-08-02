@@ -325,7 +325,7 @@ class CountableStub implements \Countable
         $this->count = $count;
     }
 
-    public function count()
+    public function count(): int
     {
         return $this->count;
     }
@@ -348,7 +348,7 @@ class IteratorAggregateStub implements \IteratorAggregate
         $this->data = $data;
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->data);
     }

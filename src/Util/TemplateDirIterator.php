@@ -16,7 +16,7 @@ namespace Twig\Util;
  */
 class TemplateDirIterator extends \IteratorIterator
 {
-    public function current()
+    public function current(): mixed
     {
         return file_get_contents(parent::current());
     }

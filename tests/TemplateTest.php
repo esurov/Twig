@@ -543,21 +543,21 @@ class TemplateArrayAccessObject implements \ArrayAccess
         '+4' => '+4',
     ];
 
-    public function offsetExists($name)
+    public function offsetExists(mixed $name): bool
     {
         return \array_key_exists($name, $this->attributes);
     }
 
-    public function offsetGet($name)
+    public function offsetGet(mixed $name): mixed
     {
         return \array_key_exists($name, $this->attributes) ? $this->attributes[$name] : null;
     }
 
-    public function offsetSet($name, $value)
+    public function offsetSet(mixed $name, mixed $value): void
     {
     }
 
-    public function offsetUnset($name)
+    public function offsetUnset(mixed $name): void
     {
     }
 }
@@ -610,7 +610,7 @@ class TemplatePropertyObject
 
 class TemplatePropertyObjectAndIterator extends TemplatePropertyObject implements \IteratorAggregate
 {
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator(['foo', 'bar']);
     }

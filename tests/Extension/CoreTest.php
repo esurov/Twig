@@ -299,7 +299,7 @@ final class CoreTestIteratorAggregate implements \IteratorAggregate
         $this->iterator = new CoreTestIterator($array, $keys, $allowAccess, $maxPosition);
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return $this->iterator;
     }
@@ -314,7 +314,7 @@ final class CoreTestIteratorAggregateAggregate implements \IteratorAggregate
         $this->iterator = new CoreTestIteratorAggregate($array, $keys, $allowValueAccess, $maxPosition);
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return $this->iterator;
     }
